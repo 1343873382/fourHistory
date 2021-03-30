@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "./app.scss"
-import {BrowserRouter,Route,Switch,Redirect} from "react-router-dom"
+import {BrowserRouter,Route,Switch} from "react-router-dom"
 import Home from "./pages/home/home"
 import Guide from "./pages/guide/guide"
 import Hall  from "./pages/hall/hall"
