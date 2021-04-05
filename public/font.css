@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'MF';
+    src: url('./MFXingYanNoncommercial-Regular.woff2') format('woff2'), url('./MFXingYanNoncommercial-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'HYXiaoBoZheZhiTiJ';
+    src: url('./HYXiaoBoZheZhiTiJ.woff2') format('woff2'), url('./HYXiaoBoZheZhiTiJ.woff') format('woff');
+}

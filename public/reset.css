@@ -96,3 +96,8 @@ body {
     height: 100%;
     width: 100%;
 }
+
+@font-face {
+    font-family: 'MF XingYan(Noncommercial)';
+    src: url('./MFXingYanNoncommercial-Regular.woff2') format('woff2'), url('./MFXingYanNoncommercial-Regular.woff') format('woff');
+}

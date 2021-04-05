@@ -7,19 +7,21 @@
     background-image: url(../../assets/images/home-bc.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    // background-position: center;
+    // background-repeat: no-repeat left top;
+    // background-size: cover;
+    // background-attachment: fixed;
     .self_information {
         position: absolute;
-        width: 60%;
-        height: 60%;
-        top: 3vh;
-        left: 270px;
-        background-image: url(../../assets/images/self-in.png);
-        background-repeat: no-repeat;
-        background-size: 100%;
+        width: 100px;
+        height: 100px;
+        top: 2vh;
+        right: 2vw;
     }
     .home-bt {
+        // margin-right: -300px;
         margin-top: 58vh;
-        width: 350px;
+        width: 345px;
         height: 230px;
         background-image: url(../../assets/images/home-bt.png);
         background-repeat: no-repeat;

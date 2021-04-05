@@ -1,0 +1,21 @@
+.hall {
+    width: 100%;
+    height: 100%;
+    background-image: url(../../assets/images/hall-bc_03.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    .hall-rule {
+        position: absolute;
+        right: 30px;
+        top: 40px;
+        width: 70px;
+        height: 70px
+    }
+    .hall-guide {
+        position: absolute;
+        right: 32px;
+        bottom: 50px;
+        width: 110px;
+        height: 180px
+    }
+}
