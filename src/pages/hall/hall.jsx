@@ -11,7 +11,11 @@ export default class Hall extends Component {
             <Link to="/guide">
             <div className="hall-guide"></div>
             </Link>
-               
+              <div className="hall-choose">
+                  <div className="hall-radius">人物区</div>
+                  <div className="hall-radius">会议区</div>
+                  <div className="hall-radius">事件区</div>
+              </div>
             </div>
         )
     }

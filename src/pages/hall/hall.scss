@@ -18,4 +18,27 @@
         width: 110px;
         height: 180px
     }
+    .hall-choose {
+        padding-top: 56vh;
+        margin: auto;
+        width: 681px;
+        display: flex;
+        justify-content: space-around;
+        .hall-radius {
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 170px;
+            height: 174px;
+            background-image: url(../../assets/hall-radius.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            font-size: 45px;
+            font-family: HYXiaoBoZheZhiTiJ;
+            font-weight: 400;
+            color: #60473A;
+            line-height: 134px;
+        }
+    }
 }

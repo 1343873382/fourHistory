@@ -1,0 +1,78 @@
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../assets/images/res-bc_03.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    .res-title {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../../assets/images/res-title1_03.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        font-size: 44px;
+        font-family: MF;
+        font-weight: 400;
+        color: #FFFFF1;
+        line-height: 37px;
+        padding: 35px 20px;
+    }
+    .res-content {
+        padding-top: 60px;
+        margin-top: 40px;
+        width: 553px;
+        height: 783px;
+        background-image: url(../../assets/images/res-content.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        .res::-webkit-scrollbar {
+            width: 0 !important
+        }
+        .res {
+            -ms-overflow-style: none;
+            overflow: scroll;
+            margin: auto;
+            width: 430px;
+            height: 501px;
+            font-size: 30px;
+            font-family: HYXiaoBoZheZhiTiJ;
+            font-weight: 400;
+            color: #A1664A;
+            line-height: 37px;
+        }
+        .res-bt {
+            margin: auto;
+            margin-top: 20px;
+            width: 341px;
+            height: 164px;
+            background-image: url(../../assets/res-bt.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+    .res-rule {
+        position: absolute;
+        top: 2vh;
+        left: 88vw;
+        width: 80px;
+        height: 80px;
+        background-image: url(../../assets/images/rule-book.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .res-guide {
+        position: absolute;
+        top: 85vh;
+        left: 80vw;
+        width: 140px;
+        height: 150px;
+        background-image: url(../../assets/images/guide-book_02.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+}
