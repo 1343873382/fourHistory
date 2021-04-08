@@ -88,7 +88,17 @@
                     line-height: 40px;
                 }
                 .school-right {
-                    flex: 3
+                    flex: 3;
+                    .school-select {
+                        display: none;
+                        margin-left: -9px;
+                        position: absolute;
+                        width: 364px;
+                        height: 213px;
+                        background-image: url(../../assets/images/school-select.png);
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                    }
                 }
             }
             .content-tel {

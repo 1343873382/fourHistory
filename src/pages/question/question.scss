@@ -3,7 +3,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background-image: url(../../assets/images/question-bc_05.jpg);
+    background-image: url(../../assets/images/question-bc.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     .rule-book {
@@ -45,5 +45,25 @@
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }
+    }
+    .question-border {
+        width: 520px;
+        height: 27vh;
+        padding: 50px;
+        position: absolute;
+        top: 10vh;
+        left: 110px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        background-image: url(../../assets/images/question-border_03.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        font-size: 55px;
+        font-family: MF;
+        font-weight: 400;
+        color: #8F4D29;
+        line-height: 62px;
     }
 }

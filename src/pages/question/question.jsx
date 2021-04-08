@@ -11,6 +11,9 @@ export default class Question extends Component {
                     <Link to="/guide">
                         <div className="guide-book"></div>
                     </Link>
+                    <div className="question-border">
+                    这位革命先辈是 否参加过十五届、 九中全会？
+                    </div>
                     <div className="question_choose">
                         <div className="question_yes"></div>
                         <div className="question_no"></div>

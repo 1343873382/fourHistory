@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import "./information.scss"
 export default class Information extends Component {
+   
     telclear=()=>{        
         let tel=document.querySelector(".tel-right").querySelector("input");
         tel.style.color="#7B4733"
@@ -35,10 +36,13 @@ export default class Information extends Component {
         }
         if(tel.value.length==11&&name.value.length!==0&&school.value.length==0){
             this.props.history.push("/")
-        }
-
-
-    
+        }   
+    }
+     turnSelect=()=>{
+        let select=document.querySelector(".school-select");
+        
+        select.style.display="block"
+       
     }
     render() {
         return (
@@ -55,7 +59,8 @@ export default class Information extends Component {
                         <div className="content-school">
                             <div className="school-left">学校：</div>
                             <div className="school-right">
-                            <input type="text" placeholder="请选择你的学校"onClick={this.schoolclear}/>
+                            <input type="text" placeholder="请选择你的学校"onChange={this.turnSelect}onClick={this.schoolclear} />
+                            <div className="school-select"></div>
                             </div>
                         </div>
                         <div className="content-tel">

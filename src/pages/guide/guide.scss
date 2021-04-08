@@ -28,6 +28,16 @@
             color: #905436;
             line-height: 44px;
         }
+        .guide-symbol {
+            position: absolute;
+            top: 85px;
+            left: 440px;
+            width: 100px;
+            height: 33px;
+            background-image: url(../../assets/images/guide-no.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
         .content-story {
             position: absolute;
             top: 180px;
@@ -117,6 +127,7 @@
         }
     }
     .content-header {
+        padding-top: 5px;
         display: flex;
         position: absolute;
         left: 80px;
@@ -125,6 +136,8 @@
         width: 550px;
         height: 100px;
         .head {
+            text-align: center;
+            padding-top: 20px;
             margin-right: -30px;
             flex: 1;
             width: 181px;
@@ -132,9 +145,16 @@
             background-image: url(../../assets/images/guide_no-active.png);
             background-repeat: no-repeat;
             background-size: 100% 100%;
-        }
-        .head:hover {
-            transform: scaleY(1.2);
+            font-size: 29px;
+            font-family: MF;
+            font-weight: 400;
+            color: #A48265;
+            line-height: 44px;
+            &:hover {
+                background-image: none;
+                background-color: #e5c88d;
+                border-radius: 10px;
+            }
         }
     }
     .guide-title {

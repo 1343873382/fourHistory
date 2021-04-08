@@ -1,6 +1,21 @@
 import React, { Component } from 'react'
 import "./guide.scss"
 export default class Guide extends Component {
+     constructor(props){
+        super(props);
+        this.state={
+            people:{
+
+                num:1
+            },
+            thing:{
+                num:1
+            },
+            communiacte:{
+                num:1
+            }
+        }
+     }
        trunBack=()=>{
            this.props.history.goBack()
        }
@@ -9,14 +24,15 @@ export default class Guide extends Component {
             <div className="guide">
                 <div className="guide-title">展物指南</div>
                 <div className="content-header">
-                         <div className="head">任务区</div>
-                         <div className="head">任务区</div>
-                         <div className="head">任务区</div>
+                         <div className="head">人物区({this.state.people.num}/10)</div>
+                         <div className="head">事件区({this.state.people.num}/10)</div>
+                         <div className="head">会议区({this.state.people.num}/10)</div>
                    </div>
                <div className="guide-content">
                    <div className="guide-title">
                        中国共产党成立
                    </div>
+                    <div className="guide-symbol"></div>
                   <div className="content-story">
                        <div className="attention">路线提示</div>
                        <div className="attention-content">
@@ -31,7 +47,7 @@ export default class Guide extends Component {
                   </div>
                   <div className="content-page">
                       <div>上一页</div>
-                      <div>2</div>
+                      <div>{this.state.people.num}/10</div>
                       <div>下一页</div>
                   </div>
                </div>
