@@ -9,7 +9,7 @@
         justify-content: center;
         z-index: 2;
         position: absolute;
-        top: 230px;
+        top: 19vh;
         left: 76px;
         width: 596px;
         height: 874px;
@@ -17,8 +17,9 @@
         background-repeat: no-repeat;
         background-size: 100% 100%;
         .guide-title {
+            padding-top: 0;
+            margin-top: 5vh;
             position: absolute;
-            top: -40px;
             left: 50px;
             width: 400px;
             height: 52px;
@@ -131,30 +132,23 @@
         display: flex;
         position: absolute;
         left: 80px;
-        top: 160px;
+        top: 15vh;
         z-index: 1;
         width: 550px;
         height: 100px;
         .head {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 10px;
             margin-right: -30px;
             flex: 1;
             width: 181px;
-            height: 100%;
-            background-image: url(../../assets/images/guide_no-active.png);
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
+            background-color: #e5c88d;
+            border-radius: 10px;
             font-size: 29px;
             font-family: MF;
             font-weight: 400;
             color: #A48265;
             line-height: 44px;
-            &:hover {
-                background-image: none;
-                background-color: #e5c88d;
-                border-radius: 10px;
-            }
         }
     }
     .guide-title {
@@ -181,7 +175,7 @@
         div {
             width: 55%;
             height: 55%;
-            background-image: url(../../assets/guide-back.png);
+            background-image: url(../../assets/images/guide-back.png);
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }

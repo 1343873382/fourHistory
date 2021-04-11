@@ -26,7 +26,7 @@
         padding-top: 60px;
         margin-top: 4vh;
         width: 553px;
-        height: 783px;
+        height: 63vh;
         background-image: url(../../assets/images/res-content.png);
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -38,29 +38,19 @@
             overflow: scroll;
             margin: auto;
             width: 430px;
-            height: 501px;
+            height: 40vh;
             font-size: 30px;
             font-family: HYXiaoBoZheZhiTiJ;
             font-weight: 400;
             color: #A1664A;
             line-height: 37px;
-            &:after {
-                content: "";
-                display: block;
-                position: fixed;
-                width: 450px;
-                height: 45px;
-                filter: blur(13px);
-                background-color: #fcf3d6;
-                top: 750px;
-            }
         }
         .res-bt {
             margin: auto;
             margin-top: 20px;
             width: 341px;
             height: 164px;
-            background-image: url(../../assets/res-bt.png);
+            background-image: url(../../assets/images/res-bt.png);
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }
