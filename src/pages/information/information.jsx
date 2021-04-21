@@ -30,7 +30,7 @@ export default class Information extends Component {
     }
     nameclear=()=>{
         let name=document.querySelector(".name-right").querySelector("input");
-        if(  name.value=="请输入姓名！"){
+        if(  name.value==="请输入姓名！"){
             name.style.color="#7B4733"
             name.value=""
         }
@@ -45,15 +45,15 @@ export default class Information extends Component {
             tel.style.color="#C4672E"
             tel.value="请输入正确的电话号码！"
         }
-        if(school.value.length==0){
+        if(school.value.length===0){
             school.style.color="#C4672E"
             school.value="请输入学校！"
         }
-        if(name.value.length==0){
+        if(name.value.length===0){
             name.style.color="#C4672E"
             name.value="请输入姓名！"
         }
-        if(tel.value.length==11&&name.value.length!==0&&school.value.length==0){
+        if(tel.value.length===11&&name.value.length!==0&&school.value.length===0){
             this.props.history.push("/")
         }
 
