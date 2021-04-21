@@ -18,7 +18,7 @@ export default class Information extends Component {
       
     }
     schoolclear=()=>{
-        let select=document.querySelector(".school-select");
+       
         let school=document.querySelector(".school-right").querySelector("input");
         if(school.value==="请输入学校！"){
             school.style.color="#7B4733"
