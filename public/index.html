@@ -14,6 +14,54 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./font.css">
+    <script>
+        // const token =
+        //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcGVuaWQiOiJvdVJDeWppeVkzQVZkZ0w3RTZDQlRHTFpzWTNrIiwiZXhwIjo1MjA5MjQ3NzMxLCJpc3MiOiJteS1wcm9qZWN0In0.JCXT0t0y-fKAYcUmqj4rTR_APeEbsCfCsQ8nKUBDMUk#/";
+        const token = document.location.href.split("token=")[1];
+        if (token && token.length) {
+            localStorage.setItem("openid_token2", token);
+            const {
+                exp,
+                openid
+            } = JSON.parse(atob(token.split(".")[1]));
+            if (!openid) {
+                localStorage.removeItem("openid_token2");
+                window.location.href =
+                    "https://wx.redrock.team/magicloop/rushb?b=https://fe-prod.redrock.team/four-history&scope=oldphp";
+            }
+            localStorage.setItem("exp", exp);
+            localStorage.setItem("openid", openid);
+        }
+        if (!localStorage.getItem("openid_token2") ||
+            (parseInt(localStorage.getItem("exp")) <
+                Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 2 &&
+                !token)
+        ) {
+            window.location.href =
+                "https://wx.redrock.team/magicloop/rushb?b=https://fe-prod.redrock.team/four-history&scope=oldphp";
+        }
+    </script>
+    <script>
+        /* 百度统计代码 */
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?ea5724a20c90e167b94fd02ee19d26c8";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+            /* 下面的代码非常重要！！！ 文档：https://tongji.baidu.com/web/help/article?id=324&type=0 */
+            _hmt.push([
+                "_requirePlugin",
+                "UrlChangeTracker", {
+                    shouldTrackUrlChange: function(newPath, oldPath) {
+                        return newPath && oldPath;
+                    },
+                },
+            ]);
+        })();
+    </script>
+
+
 </head>
 
 <body>

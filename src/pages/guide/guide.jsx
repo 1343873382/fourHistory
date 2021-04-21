@@ -52,7 +52,7 @@ export default class Guide extends Component {
                 <div className="guide-title">展物指南</div>
                 <div className="content-header">
                          <div className="head" onClick={this.turnPeople}>人物区({this.state.people.num}/10)</div>
-                         <div className="head" onClick={this.turnThing}>事件区({this.state.people.num}/10)</div>
+                         <div className="head" onClick={this.turnThing} >事件区({this.state.people.num}/10)</div>
                          <div className="head" onClick={this.turnMeeting}>会议区({this.state.people.num}/10)</div>
                    </div>
                <div className="guide-content">

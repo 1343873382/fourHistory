@@ -1,21 +1,40 @@
 import React, { Component } from 'react'
 import "./information.scss"
+import {setSchool} from"../../api/index"
 export default class Information extends Component {
-   
+   constructor(props){
+       super(props)
+       this.state={
+           data:[],
+           timeID:-1
+       }
+   }
     telclear=()=>{        
         let tel=document.querySelector(".tel-right").querySelector("input");
-        tel.style.color="#7B4733"
-        tel.value=""
+      
+        if(tel.value==="请输入正确的电话号码！"){
+            tel.style.color="#7B4733"
+            tel.value=""}
+      
     }
     schoolclear=()=>{
+        let select=document.querySelector(".school-select");
         let school=document.querySelector(".school-right").querySelector("input");
-        school.style.color="#7B4733"
-        school.value=""
+        if(school.value==="请输入学校！"){
+            school.style.color="#7B4733"
+            school.value=""
+        }
+       
+        
+
     }
     nameclear=()=>{
         let name=document.querySelector(".name-right").querySelector("input");
-        name.style.color="#7B4733"
-        name.value=""
+        if(  name.value=="请输入姓名！"){
+            name.style.color="#7B4733"
+            name.value=""
+        }
+        
     }
     turnHome=()=>{
         let name=document.querySelector(".name-right").querySelector("input")
@@ -36,15 +55,41 @@ export default class Information extends Component {
         }
         if(tel.value.length==11&&name.value.length!==0&&school.value.length==0){
             this.props.history.push("/")
-        }   
+        }
+
     }
-     turnSelect=()=>{
+     turnSelect=async()=>{
         let select=document.querySelector(".school-select");
+        let school=document.querySelector(".school-right").querySelector("input")
+        clearTimeout(this.state.timeID)
+        this.state.timeID=setTimeout(async()=>{
+            let {data}=await setSchool(school.value)
         
-        select.style.display="block"
-       
+            this.setState({
+                data
+            })
+            console.log(this.state);
+            select.style.display="block"
+        },300)
+        
+         
+    }
+    chooseSchool=(e)=>{
+        let select=document.querySelector(".school-select");
+        let school=document.querySelector(".school-right").querySelector("input")
+        console.log(e.target.innerText);
+        school.value=e.target.innerText
+        select.style.display="none"
+        this.setState({
+            data:[]
+        })
+        
     }
     render() {
+        const listItems = this.state.data.map((data) =>
+        <li key={data.ID} onClick={this.chooseSchool}>{data.college_name}</li>
+);
+ 
         return (
             <div className="information">
                 <div className="self-page">
@@ -60,7 +105,11 @@ export default class Information extends Component {
                             <div className="school-left">学校：</div>
                             <div className="school-right">
                             <input type="text" placeholder="请选择你的学校"onChange={this.turnSelect}onClick={this.schoolclear} />
-                            <div className="school-select"></div>
+                            <div className="school-select">
+                                <ul>
+                                { listItems}
+                                </ul>
+                            </div>
                             </div>
                         </div>
                         <div className="content-tel">
