@@ -12,7 +12,7 @@ import Show from './pages/show/show'
 export default class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="https://fe-prod.redrock.team/four-history">
       {/* 只匹配其中一个 */}
       <Switch>  
       {/* <Redirect from='/' exact to='/home'/> */}
