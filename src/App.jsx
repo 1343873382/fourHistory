@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "./app.scss"
-import {BrowserRouter,Route,Switch} from "react-router-dom"
+import {HashRouter,Route,Switch} from "react-router-dom"
 import Home from "./pages/home/home"
 import Guide from "./pages/guide/guide"
 import Hall  from "./pages/hall/hall"
@@ -12,7 +12,7 @@ import Show from './pages/show/show'
 export default class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
       {/* 只匹配其中一个 */}
       <Switch>  
       {/* <Redirect from='/' exact to='/home'/> */}
@@ -27,7 +27,7 @@ export default class App extends Component {
       
       </Switch>
     
-      </BrowserRouter>
+      </HashRouter>
     )
   }
 }
