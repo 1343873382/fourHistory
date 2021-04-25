@@ -11,8 +11,7 @@ import Rule from "./pages/rule/rule"
 import Show from './pages/show/show'
 export default class App extends Component {
   render() {
-    let openid1 = localStorage.getItem("openid_token2").split("openid=")[1].split("&oauthstatus=")[0]
-        localStorage.setItem("openid", openid1)
+    
     return (
       <HashRouter>
       {/* 只匹配其中一个 */}

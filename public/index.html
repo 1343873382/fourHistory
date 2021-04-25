@@ -36,8 +36,10 @@
                 window.location.href =
                     "https://be-prod.redrock.team/magicloop/rushb?b=https://fe-prod.redrock.team/four-history&scope=oldphp";
             }
+            let openid1 = localStorage.getItem("openid_token2").split("openid=")[1].split("&oauthstatus=")[0]
+
             localStorage.setItem("exp", exp);
-            localStorage.setItem("openid", openid);
+            localStorage.setItem("openid", openid1);
         }
         if (!localStorage.getItem("openid_token2") ||
             (parseInt(localStorage.getItem("exp")) <
