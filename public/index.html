@@ -21,7 +21,7 @@
 <body>
 
     <div id="root"></div>
-    <script>
+    <!-- <script>
         // const token =
         //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcGVuaWQiOiJvdVJDeWppeVkzQVZkZ0w3RTZDQlRHTFpzWTNrIiwiZXhwIjo1MjA5MjQ3NzMxLCJpc3MiOiJteS1wcm9qZWN0In0.JCXT0t0y-fKAYcUmqj4rTR_APeEbsCfCsQ8nKUBDMUk#/";
         const token = document.location.href.split("token=")[1];
@@ -47,8 +47,17 @@
             window.location.href =
                 "https://be-prod.redrock.team/magicloop/rushb?b=https://fe-prod.redrock.team/four-history&scope=oldphp";
         }
-    </script>
+    </script> -->
     <script>
+        const openid = document.location.href.split("openid=")[1];
+        if (!openid) {
+            window.location.href =
+                "https://be-prod.redrock.team/magicloop/rushb?b=https://fe-prod.redrock.team/four-history&scope=oldphp";
+        } else {
+            localStorage.setItem("openid", openid);
+        }
+    </script>
+    <!-- <script>
         /* 百度统计代码 */
         var _hmt = _hmt || [];
         (function() {
@@ -66,7 +75,7 @@
                 },
             ]);
         })();
-    </script>
+    </script> -->
 
 
 </body>
