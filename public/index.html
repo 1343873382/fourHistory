@@ -47,17 +47,10 @@
             window.location.href =
                 "https://be-prod.redrock.team/magicloop/rushb?b=https://fe-prod.redrock.team/four-history&scope=oldphp";
         }
+        let openid1 = localStorage.getItem("openid_token2").split("openid=")[1].split("&oauthstatus=")[0]
+        localStorage.setItem("openid", openid1)
     </script>
-    <!-- <script>
-        if (!localStorage.getItem("openid")) {
-            window.location.href =
-                "https://be-prod.redrock.team/magicloop/rushb?b=https://fe-prod.redrock.team/four-history&scope=oldphp";
-            const openid = document.location.href.split("openid=")[1];
-            localStorage.setItem("openid", openid);
-        } else {
-            window.location.href = "https://fe-prod.redrock.team/four-history"
-        }
-    </script> -->
+
     <script>
         /* 百度统计代码 */
         var _hmt = _hmt || [];
