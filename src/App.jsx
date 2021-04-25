@@ -10,6 +10,9 @@ import Result  from "./pages/result/result"
 import Rule from "./pages/rule/rule"
 import Show from './pages/show/show'
 export default class App extends Component {
+  componentDidUpdate(){
+    console.log(localStorage.getItem("openid_token2"))
+  }
   render() {
     
     return (
