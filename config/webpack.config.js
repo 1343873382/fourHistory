@@ -89,7 +89,6 @@ const hasJsxRuntime = (() => {
 module.exports = function(webpackEnv) {
     const isEnvDevelopment = webpackEnv === 'development';
     const isEnvProduction = webpackEnv === 'production';
-
     // Variable used for enabling profiling in Production
     // passed into alias object. Uses a flag if passed into the build command
     const isEnvProductionProfile =
@@ -220,6 +219,7 @@ module.exports = function(webpackEnv) {
         output: {
             // The build folder.
             path: isEnvProduction ? paths.appBuild : undefined,
+            publicPath:process.env.NODE_ENV === 'production' ? '/four-history/' : '/',
             // Add /* filename */ comments to generated require()s in the output.
             pathinfo: isEnvDevelopment,
             // There will be one main bundle, and one file per asynchronous chunk.
