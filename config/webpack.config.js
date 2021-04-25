@@ -219,7 +219,6 @@ module.exports = function(webpackEnv) {
         output: {
             // The build folder.
             path: isEnvProduction ? paths.appBuild : undefined,
-            publicPath:process.env.NODE_ENV === 'production' ? '/four-history/' : '/',
             // Add /* filename */ comments to generated require()s in the output.
             pathinfo: isEnvDevelopment,
             // There will be one main bundle, and one file per asynchronous chunk.
