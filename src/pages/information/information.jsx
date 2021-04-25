@@ -56,7 +56,7 @@ export default class Information extends Component {
         if(tel.value.length===11&&name.value.length!==0&&school.value.length===0){
             this.props.history.push("/")
         }
-
+        console.log(localStorage.getItem("openid_token2"))
     }
      turnSelect=async()=>{
         let select=document.querySelector(".school-select");
