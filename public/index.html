@@ -47,6 +47,10 @@
             window.location.href =
                 "https://be-prod.redrock.team/magicloop/rushb?b=https://fe-prod.redrock.team/four-history&scope=oldphp";
         }
+        let Openid_token2 = localStorage.getItem("openid_token2")
+        let Token = decodeURIComponent(Openid_token2)
+        let openid = Token.split("openid=")[1].split("&oauthstatus")[0]
+        localStorage.setItem("openid", openid)
     </script>
 
     <script>
