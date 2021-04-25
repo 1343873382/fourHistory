@@ -23,7 +23,9 @@ function getToken() {
   let openid = Token.split("openid=")[1].split("&oauthstatus")[0]
   localStorage.setItem("openid", openid)
 }
-getToken();
+if(process.env.NODE_ENV === 'production'){
+  getToken();
+}
 ReactDOM.render(
   <App />,
   document.getElementById('root')
