@@ -24,9 +24,9 @@
     <script>
         // const token =
         //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcGVuaWQiOiJvdVJDeWppeVkzQVZkZ0w3RTZDQlRHTFpzWTNrIiwiZXhwIjo1MjA5MjQ3NzMxLCJpc3MiOiJteS1wcm9qZWN0In0.JCXT0t0y-fKAYcUmqj4rTR_APeEbsCfCsQ8nKUBDMUk#/";
-        const token = document.location.href.split("headimgurl=")[1];
+        const token = document.location.href.split("headimgurl=")[1].split("openid=")[1].split("&oauthstatus=")[0];
         if (token && token.length) {
-            localStorage.setItem("openid_token2", token);
+            localStorage.setItem("openid", token);
             const {
                 exp,
                 openid
@@ -36,10 +36,8 @@
                 window.location.href =
                     "https://be-prod.redrock.team/magicloop/rushb?b=https://fe-prod.redrock.team/four-history&scope=oldphp";
             }
-            let openid1 = localStorage.getItem("openid_token2").split("openid=")[1].split("&oauthstatus=")[0]
-
             localStorage.setItem("exp", exp);
-            localStorage.setItem("openid", openid1);
+            localStorage.setItem("openid", openid);
         }
         if (!localStorage.getItem("openid_token2") ||
             (parseInt(localStorage.getItem("exp")) <
