@@ -49,12 +49,13 @@
         }
     </script> -->
     <script>
-        const openid = document.location.href.split("openid=")[1];
         if (!localStorage.getItem("openid")) {
             window.location.href =
                 "https://be-prod.redrock.team/magicloop/rushb?b=https://fe-prod.redrock.team/four-history&scope=oldphp";
-        } else {
+            const openid = document.location.href.split("openid=")[1];
             localStorage.setItem("openid", openid);
+        } else {
+            window.location.href = "https://fe-prod.redrock.team/four-history"
         }
     </script>
     <!-- <script>
