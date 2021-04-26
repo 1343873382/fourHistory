@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import "./information.scss"
 import {setSchool} from"../../api/index"
+import {setInformation} from "../../api/index"
 export default class Information extends Component {
    constructor(props){
        super(props)
@@ -36,10 +37,18 @@ export default class Information extends Component {
         }
         
     }
-    turnHome=()=>{
+    turnHome=async()=>{
         let name=document.querySelector(".name-right").querySelector("input")
         let school=document.querySelector(".school-right").querySelector("input")
         let tel=document.querySelector(".tel-right").querySelector("input");
+        let openid=localStorage.getItem("openid")
+        
+        let res=await setInformation(name.value,school.value,tel.value,openid)
+        let info=res.info
+       localStorage.setItem("info",info)
+        if(res.code===10000){
+            this.props.history.push("/")
+        }
         
         if (tel.value.length!==11){
             tel.style.color="#C4672E"
@@ -68,7 +77,7 @@ export default class Information extends Component {
             this.setState({
                 data
             })
-            console.log(this.state);
+           
             select.style.display="block"
         },300)
         

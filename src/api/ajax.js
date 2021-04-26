@@ -11,7 +11,24 @@ export default function ajax(url, data = {}, type = 'GET') {
                 params: data // 指定请求参数
             })
         } else { // 发POST请求
-            promise = axios.post(url, data)
+            promise = axios({
+                method: 'post',
+                url,
+                data,
+                transformRequest: [
+                    function(data) {
+                        let ret = ''
+                        for (let it in data) {
+                            ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+                        }
+                        ret = ret.substring(0, ret.lastIndexOf('&'));
+                        return ret
+                    }
+                ],
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            })
         }
         // 2. 如果成功了, 调用resolve(value)
         promise.then(response => {
