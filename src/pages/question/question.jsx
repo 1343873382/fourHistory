@@ -14,6 +14,7 @@ export default class Question extends Component {
         }
     }
     async componentDidMount(){
+        
         let {data}=await answerQuestion(1)
         
  
@@ -34,8 +35,9 @@ export default class Question extends Component {
           no.style="none"
           no.style.transition="0.4s all"
          let res=await answerQuestion(this.state.left_id)
-         if(this.state.right_id===0&&this.state.left_id===0){
-            return
+         if(res.data.right_id===0&&res.data.left_id===0){
+            sessionStorage.setItem("pro_str",res.data.pro_str)
+            this.props.history.push("/result")
         }else{
             console.log(res);
             this.setState({
@@ -59,8 +61,9 @@ export default class Question extends Component {
           yes.style.transition="0.4s all"
          
           let res=await answerQuestion(this.state.right_id)
-          if(this.state.right_id===0&&this.state.left_id===0){
-              return
+          if(res.data.right_id===0&&res.data.left_id===0){
+              sessionStorage.setItem("pro_str",res.data.pro_str)
+            this.props.history.push("/result")
           }else{
             console.log(res);
             this.setState({
