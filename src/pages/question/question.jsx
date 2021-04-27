@@ -16,7 +16,6 @@ export default class Question extends Component {
     async componentDidMount(){
         
         let {data}=await answerQuestion(1)
-        
  
         this.setState({
             isRender:true,
