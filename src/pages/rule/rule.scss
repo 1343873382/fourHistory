@@ -1,9 +1,46 @@
 .rule {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100vh;
+    background-image: url(../../assets/images/home-bc.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-image: url(../../assets/images/rule-bc_02.jpg);
+    .rule-content {
+        width: 100%;
+        height: 100%;
+        background-image: url(../../assets/images/rule-con.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        z-index: 6;
+    }
+    .mask {
+        background: #000;
+        opacity: 0.3;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        z-index: 5;
+        .logo {
+            background: url(../../assets/images/logo.png)no-repeat;
+            background-size: 241px 73px;
+            width: 241px;
+            height: 73px;
+            position: absolute;
+            top: 2vh;
+            left: 2vw;
+        }
+        .info {
+            background: url(../../assets/images/self-info.png)no-repeat;
+            background-size: 73px 73px;
+            position: absolute;
+            width: 73px;
+            height: 73px;
+            top: 2vh;
+            right: 2vw;
+        }
+    }
     .rule-bt {
         position: absolute;
         bottom: 19vh;

@@ -4,24 +4,34 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-image: url(../../assets/images/home-bc.jpg);
+    background-image: url(../../assets/images/Home_02.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat left top;
-    background-size: cover;
-    background-attachment: fixed;
-    .self_information {
+    .logo {
+        background: url(../../assets/images/logo.png)no-repeat;
+        background-size: 241px 73px;
+        width: 241px;
+        height: 73px;
         position: absolute;
-        width: 100px;
-        height: 100px;
+        top: 2vh;
+        left: 2vw;
+    }
+    .self_information {
+        background: url(../../assets/images/self-info.png)no-repeat;
+        background-size: 73px 73px;
+        position: absolute;
+        width: 73px;
+        height: 73px;
         top: 2vh;
         right: 2vw;
     }
     .home-bt {
         // margin-right: -300px;
-        margin-top: 58vh;
+        margin-top: 52vh;
         width: 345px;
-        height: 230px;
+        height: 160px;
+        background-image: url(../../assets/images/home-bt.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
     }
 }
