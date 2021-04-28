@@ -1,3 +1,19 @@
+@media screen and (max-height: 750px) {
+    .home {
+        background-image: url(../../assets/images/home-bc.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+@media screen and (min-height: 800px) {
+    .home {
+        background-image: url(../../assets/images/xhome-bc.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
 .home {
     display: flex;
     justify-content: center;

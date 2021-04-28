@@ -14,8 +14,9 @@ export default class Question extends Component {
         }
     }
     async componentDidMount(){
+        let id=sessionStorage.getItem("id")
+        let {data}=await answerQuestion(id)
         
-        let {data}=await answerQuestion(1)
  
         this.setState({
             isRender:true,
@@ -23,7 +24,7 @@ export default class Question extends Component {
             left_id:data.left_id,
             right_id:data.right_id
         })
-        console.log(this.state);
+       
     }
     turnNo= ()=>{
         let no=document.querySelector(".question_no")
@@ -33,12 +34,14 @@ export default class Question extends Component {
         setTimeout(async()=>{
           no.style="none"
           no.style.transition="0.4s all"
-         let res=await answerQuestion(this.state.left_id)
-         if(res.data.right_id===0&&res.data.left_id===0){
-            sessionStorage.setItem("pro_str",res.data.pro_str)
+         let res=await answerQuestion(this.state.right_id)
+         console.log(res);
+         if(!res.data.right_id){
+            sessionStorage.setItem("memorialHallContent",res.data.memorialHallContent)
+            sessionStorage.setItem("pro_str",res.data.problem.pro_str)
             this.props.history.push("/result")
         }else{
-            console.log(res);
+          
             this.setState({
                isRender:true,
                string:res.data.pro_str,
@@ -59,25 +62,36 @@ export default class Question extends Component {
           yes.style="none"
           yes.style.transition="0.4s all"
          
-          let res=await answerQuestion(this.state.right_id)
-          if(res.data.right_id===0&&res.data.left_id===0){
-              sessionStorage.setItem("pro_str",res.data.pro_str)
+          let res=await answerQuestion(this.state.left_id)
+          console.log(res);
+          if(!res.data.right_id){
+            sessionStorage.setItem("memorialHallContent",res.data.memorialHallContent)
+              sessionStorage.setItem("pro_str",res.data.problem.pro_str)
             this.props.history.push("/result")
           }else{
-            console.log(res);
+           
             this.setState({
                isRender:true,
                string:res.data.pro_str,
                left_id:res.data.left_id,
                right_id:res.data.right_id
            })
-           console.log(this.state);
+          
           }
         
         },400)
     }
     render() {
-        let begin=<div>他/她 是否是党的第一代领导集体？</div>
+         var begin
+         let id=sessionStorage.getItem("id")
+         if( id===1)
+         {begin=<div>他/她 是否是党的第一代领导集体？</div>}
+         if(id===57){
+            begin=<div>该事件是否发生在改革开放前？</div>
+         }
+         if(id===77){
+            begin=<div>该会议是否在举办在1979年前？</div>
+         }
         return (
             <div className="question">
                 <Link to="/rule">
