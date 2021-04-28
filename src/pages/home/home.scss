@@ -1,32 +1,16 @@
-@media screen and (max-height: 750px) {
-    .home {
-        background-image: url(../../assets/images/home-bc.jpg);
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-    }
-}
-
-@media screen and (min-height: 800px) {
-    .home {
-        background-image: url(../../assets/images/xhome-bc.jpg);
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-    }
-}
-
 .home {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
-    // background-image: url(../../assets/images/home-bc.jpg);
-    // background-repeat: no-repeat;
-    // background-size: 100% 100%;
-    // background-position: center;
-    // background-repeat: no-repeat left top;
-    // background-size: cover;
-    // background-attachment: fixed;
+    background-image: url(../../assets/images/home-bc.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat left top;
+    background-size: cover;
+    background-attachment: fixed;
     .self_information {
         position: absolute;
         width: 100px;
