@@ -38,7 +38,7 @@ export default class Question extends Component {
          console.log(res);
          if(!res.data.right_id){
             sessionStorage.setItem("memorialHallContent",res.data.memorialHallContent)
-            sessionStorage.setItem("pro_str",res.data.problem.pro_str)
+            sessionStorage.setItem("title",res.data.title)
             this.props.history.push("/result")
         }else{
           
@@ -66,7 +66,7 @@ export default class Question extends Component {
           console.log(res);
           if(!res.data.right_id){
             sessionStorage.setItem("memorialHallContent",res.data.memorialHallContent)
-              sessionStorage.setItem("pro_str",res.data.problem.pro_str)
+            sessionStorage.setItem("title",res.data.title)
             this.props.history.push("/result")
           }else{
            

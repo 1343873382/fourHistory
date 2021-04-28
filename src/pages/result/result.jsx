@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 import {Link} from "react-router-dom"
 import "./result.scss"
+import ERR from "../../component/err/err"
 export default class Result extends Component {
     render() {
-        let pro_str=sessionStorage.getItem("pro_str")
+        let title=sessionStorage.getItem("title")
         let memorialHallContent=sessionStorage.getItem("memorialHallContent")
+      
         return (
             <div className="result">
-                <div className="res-title">{pro_str} </div>
+                <div className="res-title">{title} </div>
                      <div className="res-content">
                               <div className="res">
-                                  {memorialHallContent}
+                                
+                                  {title==="茶水间"? <ERR></ERR>:memorialHallContent}
                               </div>
                            <Link to="/hall"> <div className="res-bt"></div></Link>  
                      </div>

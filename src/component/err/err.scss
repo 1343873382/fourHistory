@@ -1,0 +1,27 @@
+.error {
+    padding-top: 50px;
+    padding-left: 30px;
+    width: 350px;
+    height: 350px;
+    .big {
+        margin: auto;
+        width: 390px;
+        height: 90px;
+        font-size: 48px;
+        font-family: HYXiaoBoZheZhiTiJ;
+        font-weight: 400;
+        color: #9E6245;
+        line-height: 44px;
+    }
+    .small {
+        padding-left: 50px;
+        width: 350px;
+        width: auto;
+        text-align: center;
+        font-size: 33px;
+        font-family: HYXiaoBoZheZhiTiJ;
+        font-weight: 400;
+        color: #9E6245;
+        line-height: 44px;
+    }
+}
