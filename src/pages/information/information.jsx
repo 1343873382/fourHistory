@@ -126,7 +126,7 @@ export default class Information extends Component {
                         <div className="content-tel">
                             <div className="tel-left">电话：</div>
                             <div className="tel-right">
-                                <input type="text" placeholder="请输入你的电话号码" list="browsers" required autocomplete="off" onClick={this.telclear} />
+                                <input type="text" placeholder="请输入你的电话号码" list="browsers" required onClick={this.telclear} />
                             </div>
                         </div>
                     </div>
