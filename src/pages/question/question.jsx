@@ -37,6 +37,7 @@ export default class Question extends Component {
          let res=await answerQuestion(this.state.right_id)
          console.log(res);
          if(!res.data.right_id){
+            sessionStorage.setItem("memorialHallId",res.data.memorialHallId)
             sessionStorage.setItem("memorialHallContent",res.data.memorialHallContent)
             sessionStorage.setItem("title",res.data.title)
             this.props.history.push("/result")
@@ -65,6 +66,7 @@ export default class Question extends Component {
           let res=await answerQuestion(this.state.left_id)
           console.log(res);
           if(!res.data.right_id){
+            sessionStorage.setItem("memorialHallId",res.data.memorialHallId)
             sessionStorage.setItem("memorialHallContent",res.data.memorialHallContent)
             sessionStorage.setItem("title",res.data.title)
             this.props.history.push("/result")

@@ -49,8 +49,10 @@ export default class Guide extends Component {
            this.changeStyle(index)
            let openid=localStorage.getItem("openid")
            let area="figure_area"
+        //    let res=await showArea(openid,area)
+        //    console.log( res);
            let {data:{guides}}=await showArea(openid,area)
-        
+       
            this.setState({
             isRender:true,
             index:1,
@@ -117,7 +119,12 @@ export default class Guide extends Component {
     render() {
         let before0=<div>毛泽东</div>
         let before1=<div>
-            一、党的第一代领导集体 二、曾担任过中华人民共和国主席 三、没有参加中共一大 四、书写了《论共产党员的修养》
+            <p> 一、党的第一代领导集体 </p>
+            <p>  二、曾担任过中华人民共和国主席  </p>
+            <p>三、曾参加过中共一大 </p>
+           
+             
+        
         </div>
         let before2=<div>毛泽东同志常说：“我一生最大的爱好是读书。”“饭可以一日不吃，觉可以一日不睡，书不可以一日不读”。不管是在大革命时期还是在抗日战争时期，毛泽东都利用战争空隙争分夺秒地研读，把一切能利用的时间都用上,延安时期，毛泽东特别提倡在党内要形成读书学习的风气。他把读书学习叫作“攻书”。学习，除了读，还要会使用。在延安窑洞中，毛泽东创造性地撰写了马克思主义中国化的理论著作，如《矛盾论》《实践论》《论持久战》《新民主主义论》等，这不仅展现了他丰富的马克思主义理论积累，同时也展现了生动的革命实践。毛泽东的一生，是勤奋学习的一生。据记载，毛泽东保存下来的藏书达1万余种近10万册，其中有不少书籍上还留下他的批注和圈画。</div>
         return (
@@ -137,7 +144,7 @@ export default class Guide extends Component {
                   <div className="content-story">
                        <div className="attention">路线提示</div>
                        <div className="attention-content">
-                       <div>{this.state.isRender===false?before1:this.state.array[this.state.index-1].road}</div>
+                       <div>{this.state.isRender===false?before1:<div style={{"white-space":"pre-line"}}>{this.state.array[this.state.index-1].road}</div>}</div>
                           {/* {this.state.array[1].road} */}
                        </div>
                          <div className="story">人物故事</div>

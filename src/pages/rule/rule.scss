@@ -43,9 +43,10 @@
     }
     .rule-bt {
         position: absolute;
-        bottom: 19vh;
+        bottom: 18vh;
         left: 36vw;
         width: 220px;
-        height: 150px;
+        height: 120px;
+        z-index: 10;
     }
 }
