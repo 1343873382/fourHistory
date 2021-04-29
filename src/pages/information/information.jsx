@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import "./information.scss"
 import { setSchool } from "../../api/index"
-import { setInformation } from "../../api/index"
+import { setInformation,updateInformation } from "../../api/index"
 export default class Information extends Component {
     constructor(props) {
         super(props)
@@ -43,30 +43,54 @@ export default class Information extends Component {
         let school = document.querySelector(".school-right").querySelector("input")
         let tel = document.querySelector(".tel-right").querySelector("input");
         let openid = localStorage.getItem("openid")
+        let INFO=localStorage.getItem("info")
+        if(INFO==="success"){
+            let res = await updateInformation(name.value, school.value, tel.value, openid)
+            let info = res.info
+            localStorage.setItem("info", info)
+            if (res.code === 10000) {
+                this.props.history.push("/")
+            }
 
-        let res = await setInformation(name.value, school.value, tel.value, openid)
-        let info = res.info
-        localStorage.setItem("info", info)
-        if (res.code === 10000) {
-            this.props.history.push("/")
-        }
+            if (tel.value.length !== 11) {
+                tel.style.color = "#C4672E"
+                tel.value = "请输入正确的电话号码！"
+            }
+            if (school.value.length === 0) {
+                school.style.color = "#C4672E"
+                school.value = "请输入学校！"
+            }
+            if (name.value.length === 0) {
+                name.style.color = "#C4672E"
+                name.value = "请输入姓名！"
+            }
+            if (tel.value.length === 11 && name.value.length !== 0 && school.value.length === 0) {
+                this.props.history.push("/")
+            }
+        }else{
+            let res = await setInformation(name.value, school.value, tel.value, openid)
+            let info = res.info
+            localStorage.setItem("info", info)
+            if (res.code === 10000) {
+                this.props.history.push("/")
+            }
 
-        if (tel.value.length !== 11) {
-            tel.style.color = "#C4672E"
-            tel.value = "请输入正确的电话号码！"
+            if (tel.value.length !== 11) {
+                tel.style.color = "#C4672E"
+                tel.value = "请输入正确的电话号码！"
+            }
+            if (school.value.length === 0) {
+                school.style.color = "#C4672E"
+                school.value = "请输入学校！"
+            }
+            if (name.value.length === 0) {
+                name.style.color = "#C4672E"
+                name.value = "请输入姓名！"
+            }
+            if (tel.value.length === 11 && name.value.length !== 0 && school.value.length === 0) {
+                this.props.history.push("/")
+            }
         }
-        if (school.value.length === 0) {
-            school.style.color = "#C4672E"
-            school.value = "请输入学校！"
-        }
-        if (name.value.length === 0) {
-            name.style.color = "#C4672E"
-            name.value = "请输入姓名！"
-        }
-        if (tel.value.length === 11 && name.value.length !== 0 && school.value.length === 0) {
-            this.props.history.push("/")
-        }
-
     }
     turnSelect = async () => {
         let select = document.querySelector(".school-select");
