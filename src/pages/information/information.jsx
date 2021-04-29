@@ -74,11 +74,11 @@ export default class Information extends Component {
         clearTimeout(this.state.timeID)
         this.state.timeID = setTimeout(async () => {
             let { data } = await setSchool(school.value)
-           
+           console.log(data);
             this.setState({
                 data:data.colleges
             })
-       
+        
             select.style.display = "block"
         }, 300)
 

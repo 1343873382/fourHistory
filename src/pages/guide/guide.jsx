@@ -41,6 +41,7 @@ export default class Guide extends Component {
         heads[index].style.WebkitTransform="translateY(-10px)"
         heads[index].style.transition="0.4s all"
         heads[index].style.paddingTop="8px";
+        heads[index].style.color="#8e6e62";
         heads[index].style.backgroundColor="#e4c388"
        }
        turnPeople=async()=>{  
