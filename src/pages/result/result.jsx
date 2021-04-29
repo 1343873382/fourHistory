@@ -23,6 +23,7 @@ export default class Result extends Component {
             <div className="result">
                 <div className="res-title">{title} </div>
                      <div className="res-content">
+                         <div className="mask"></div>
                               <div className="res">
                                 
                                   {title==="茶水间"? <ERR></ERR>:memorialHallContent}

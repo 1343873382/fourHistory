@@ -8,7 +8,12 @@ export default class Guide extends Component {
         this.state={
             isRender:false,
             array:[],
-            index:1
+            index:1,
+            area:[],
+            figure_area:[],
+            event_area:[],
+            conference_area:[]
+
         }
      }
       
@@ -17,11 +22,25 @@ export default class Guide extends Component {
         
         let openid=localStorage.getItem("openid")
         let area="figure_area"
-        let {data:{guides}}= await showArea(openid,area)
-     
+        let {data}= await showArea(openid,area)
+        let figure_area=data.process.figure_area.split(",")
+      
+        let event_area=data.process.event_area.split(",")
+        let conference_area=data.process.conference_area.split(",")
+        this.state.area.push(...figure_area,...event_area,...conference_area)
+        console.log(this.state.area);
+        console.log(figure_area);
+        console.log(event_area);
+        console.log(conference_area);
+        console.log(data);
         this.setState({
-            array:guides,
-            isRender:true
+            array:data.guides,
+            isRender:true,
+            figure_area,
+            event_area,
+            conference_area
+
+            
         })
         
         console.log(this.state.array[1].road);
@@ -45,7 +64,7 @@ export default class Guide extends Component {
         heads[index].style.backgroundColor="#e4c388"
        }
        turnPeople=async()=>{  
-       
+     
            let index=0;
            this.changeStyle(index)
            let openid=localStorage.getItem("openid")
@@ -81,7 +100,7 @@ export default class Guide extends Component {
       
        }
        turnMeeting=async()=>{
-       
+         
         let index=2;
            this.changeStyle(index)
            let openid=localStorage.getItem("openid")
@@ -118,6 +137,7 @@ export default class Guide extends Component {
        
     }
     render() {
+        
         let before0=<div>毛泽东</div>
         let before1=<div>
             <p> 一、党的第一代领导集体 </p>
@@ -128,20 +148,24 @@ export default class Guide extends Component {
         
         </div>
         let before2=<div>毛泽东同志常说：“我一生最大的爱好是读书。”“饭可以一日不吃，觉可以一日不睡，书不可以一日不读”。不管是在大革命时期还是在抗日战争时期，毛泽东都利用战争空隙争分夺秒地研读，把一切能利用的时间都用上,延安时期，毛泽东特别提倡在党内要形成读书学习的风气。他把读书学习叫作“攻书”。学习，除了读，还要会使用。在延安窑洞中，毛泽东创造性地撰写了马克思主义中国化的理论著作，如《矛盾论》《实践论》《论持久战》《新民主主义论》等，这不仅展现了他丰富的马克思主义理论积累，同时也展现了生动的革命实践。毛泽东的一生，是勤奋学习的一生。据记载，毛泽东保存下来的藏书达1万余种近10万册，其中有不少书籍上还留下他的批注和圈画。</div>
+        let sy=document.querySelectorAll(".guide-symbol")
         return (
             <div className="guide">
                 <div className="guide-title">展物指南</div>
                 <div className="content-header">
-                         <div className="head" onClick={this.turnPeople}>人物区(1/20)</div>
-                         <div className="head" onClick={this.turnThing} >事件区(1/12)</div>
-                         <div className="head" onClick={this.turnMeeting}>会议区(1/12)</div>
+                         <div className="head" onClick={this.turnPeople}>人物区({this.state.figure_area.length}/20)</div>
+                         <div className="head" onClick={this.turnThing} >事件区({this.state.event_area.length}/12)</div>
+                         <div className="head" onClick={this.turnMeeting}>会议区({this.state.conference_area.length}/12)</div>
                    </div>
                <div className="guide-content">
                    <div className="guide-title">
                        <div> {this.state.isRender===false?before0:this.state.array[this.state.index-1].title}</div>
                      
                    </div>
-                    <div className="guide-symbol"></div>
+               
+                    <div className="guide-symbol">
+                      
+                    </div>
                   <div className="content-story">
                        <div className="attention">路线提示</div>
                        <div className="attention-content">
