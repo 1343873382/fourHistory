@@ -97,7 +97,7 @@ export default class Information extends Component {
     }
     render() {
         const listItems = this.state.data.map((data) =>
-            <li key={data.ID} onClick={this.chooseSchool}>{data.college_name}</li>
+            <li key={data} onClick={this.chooseSchool}>{data}</li>
         );
 
         return (

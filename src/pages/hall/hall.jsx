@@ -6,10 +6,10 @@ export default class Hall extends Component {
         sessionStorage.setItem("id",1)
     }
     setMeetid=()=>{
-        sessionStorage.setItem("id",58)
+        sessionStorage.setItem("id",77)
     }
     setThingid=()=>{
-        sessionStorage.setItem("id",77)
+        sessionStorage.setItem("id",58)
     }
     render() {
         return (
