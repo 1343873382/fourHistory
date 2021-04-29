@@ -11,7 +11,7 @@ export default class Result extends Component {
         let memorial_hall_id = sessionStorage.getItem("memorialHallId")
         let openid = localStorage.getItem("openid")
         if (title !== "茶水间") {
-            let res = await setHall(openid, memorial_hall_id)
+            setHall(openid, memorial_hall_id)
         }
     }
     render() {
