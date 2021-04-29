@@ -39,6 +39,17 @@
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }
+        .guideok-symbol{
+            position: absolute;
+            top: 88px;
+            left: 430px;
+            width: 140px;
+            height: 140px;
+            background-image: url(../../assets/images/guide-ok.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            z-index: 999;
+        }
         .content-story {
             position: absolute;
             top: 180px;
@@ -62,6 +73,21 @@
             }
             .attention-content::-webkit-scrollbar {
                 width: 0 !important
+            }
+            .unattention-content{
+                -ms-overflow-style: none;
+                overflow: scroll;
+                margin-top: 75px;
+                height: 140px;
+                width: 421px;
+                div {
+                    width: 420px;
+                    font-size: 29px;
+                    font-family: HYXiaoBoZheZhiTiJ;
+                    font-weight: 400;
+                    color: #8F5A40;
+                    line-height: 37px;
+                }
             }
             .attention-content {
                 -ms-overflow-style: none;
