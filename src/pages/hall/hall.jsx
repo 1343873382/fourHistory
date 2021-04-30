@@ -34,8 +34,8 @@ export default class Hall extends Component {
                 <div className="hall-guide" onClick={this.setShow}></div>
                 <div className="hall-choose">
                     <Link to="/question"><div className="hall-radius" onClick={this.setPeopleid}>人物区</div></Link>
-                    <Link to="/question"><div className="hall-radius" onClick={this.setMeetid}>会议区</div></Link>
                     <Link to="/question"><div className="hall-radius" onClick={this.setThingid}>事件区</div></Link>
+                    <Link to="/question"><div className="hall-radius" onClick={this.setMeetid}>会议区</div></Link>
                 </div>
                 <Guide isShow={this.state.isShow} chShow = {this.setFatherShow}/>
             </div>
