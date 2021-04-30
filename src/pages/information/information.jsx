@@ -13,12 +13,8 @@ export default class Information extends Component {
     componentDidMount(){
         let originalHeight=document.documentElement.clientHeight || document.body.clientHeight;  
         console.info("原始窗口的高度"+originalHeight);  
-        window.οnresize=function(){  
-            var resizeHeight=document.documentElement.clientHeight || document.body.clientHeight;  
-            console.info("软键盘弹起后窗口的高度"+resizeHeight);  
-            if(resizeHeight<originalHeight){  
-                  document.querySelector('#root').style.height = originalHeight+'px';
-             }
+        window.onresize = function(){
+                document.querySelector('.information').style.height = originalHeight+'px';
         }
     }
     telclear = () => {
