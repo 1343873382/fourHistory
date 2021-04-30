@@ -10,6 +10,17 @@ export default class Information extends Component {
             timeID: -1
         }
     }
+    componentDidMount(){
+        let originalHeight=document.documentElement.clientHeight || document.body.clientHeight;  
+        console.info("原始窗口的高度"+originalHeight);  
+        window.οnresize=function(){  
+            var resizeHeight=document.documentElement.clientHeight || document.body.clientHeight;  
+            console.info("软键盘弹起后窗口的高度"+resizeHeight);  
+            if(resizeHeight<originalHeight){  
+                  document.querySelector('body').style.height = originalHeight+'px';
+             }
+        }
+    }
     telclear = () => {
         let tel = document.querySelector(".tel-right").querySelector("input");
 
