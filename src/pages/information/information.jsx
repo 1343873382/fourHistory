@@ -167,10 +167,7 @@ export default class Information extends Component {
                         <div className="content-school">
                             <div className="school-left">学校：</div>
                             <div className="school-right">
-                                <input type="text" placeholder="请选择你的学校" onChange={this.turnSelect} onClick={this.schoolclear} onBlur={()=>{
-                                    let select = document.querySelector(".school-select");
-                                    select.style.display = "none"
-                                }}/>
+                                <input type="text" placeholder="请选择你的学校" onChange={this.turnSelect} onClick={this.schoolclear}/>
                                 <div className="school-select">
                                     <ul>
                                         {listItems}
