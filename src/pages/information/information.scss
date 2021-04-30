@@ -7,12 +7,13 @@
     background-image: url(../../assets/images/home-bc.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    position: fixed;
     .mask{
         background: #000;
         opacity: 0.3;
         width: 100vw;
         height: 1334px;
-        position: absolute;
+        position: fixed;
         z-index: 5;
         .logo{
             background: url(../../assets/images/logo.png)no-repeat;

@@ -7,11 +7,15 @@ export default class Information extends Component {
         super(props)
         this.state = {
             data: [],
-            timeID: -1
+            timeID: -1,
+            height:1334
         }
     }
     componentDidMount(){
         let originalHeight=document.documentElement.clientHeight || document.body.clientHeight;
+        this.setState({
+            height:originalHeight
+        })
         document.querySelector('.information').style.height = originalHeight+'px';
         document.querySelector('.mask').style.height = originalHeight+'px';  
         window.onresize = function(){
@@ -148,10 +152,9 @@ export default class Information extends Component {
         const listItems = (this.state.data||[]).map((data) =>
             <li key={data} onClick={this.chooseSchool}>{data}</li>
         );
-
         return (
-            <div className="information">
-                <div className="mask"><div className="logo"></div><div className="info"></div></div>
+            <div className="information" style={{height:this.state.height+'px'}}>
+                <div className="mask"  style={{height:this.state.height+'px'}}><div className="logo"></div><div className="info"></div></div>
                 <div className="self-page">
                     <div className="self-title">个人信息</div>
                     <div className="self-content">
@@ -164,7 +167,10 @@ export default class Information extends Component {
                         <div className="content-school">
                             <div className="school-left">学校：</div>
                             <div className="school-right">
-                                <input type="text" placeholder="请选择你的学校" onChange={this.turnSelect} onClick={this.schoolclear} />
+                                <input type="text" placeholder="请选择你的学校" onChange={this.turnSelect} onClick={this.schoolclear} onBlur={()=>{
+                                    let select = document.querySelector(".school-select");
+                                    select.style.display = "none"
+                                }}/>
                                 <div className="school-select">
                                     <ul>
                                         {listItems}
