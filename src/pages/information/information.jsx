@@ -17,10 +17,10 @@ export default class Information extends Component {
             height:originalHeight
         })
         document.querySelector('.information').style.height = originalHeight+'px';
-        document.querySelector('.mask').style.height = originalHeight+'px';  
+        document.querySelector('.mask').style.height = originalHeight+'px';
         window.onresize = function(){
-                document.querySelector('.information').style.height = originalHeight+'px';
-                document.querySelector('.mask').style.height = originalHeight+'px';
+            document.querySelector('.information').style.height = originalHeight+'px';
+            document.querySelector('.mask').style.height = originalHeight+'px';
         }
     }
     telclear = () => {
@@ -73,13 +73,17 @@ export default class Information extends Component {
                 name.value.length !== 0&&
                 name.value !== "请输入姓名！"&&
                 school.value !== "请输入学校！"&&
-                tel.value !== "请输入正确的电话号码！"
+                tel.value !== "请输入正确的电话号码！"&&
+                school.value !== "请输入正确的学校名称！"
             ){
                 let res = await updateInformation(name.value, school.value, tel.value, openid)
                 let info = res.info
                 localStorage.setItem("info", info)
                 if (res.code === 10000) {
                     this.props.history.push("/")
+                }else if(res.code===20000){
+                    school.style.color = "#C4672E"
+                    school.value = "请输入正确的学校名称！"
                 }
             }
         }else{
@@ -102,13 +106,17 @@ export default class Information extends Component {
                 name.value.length !== 0&&
                 name.value !== "请输入姓名！"&&
                 school.value !== "请输入学校！"&&
-                tel.value !== "请输入正确的电话号码！"
+                tel.value !== "请输入正确的电话号码！"&&
+                school.value !== "请输入正确的学校名称！"
             ){
                 let res = await setInformation(name.value, school.value, tel.value, openid)
                 let info = res.info
                 localStorage.setItem("info", info)
                 if (res.code === 10000) {
                     this.props.history.push("/")
+                }else if(res.code===20000){
+                    school.style.color = "#C4672E"
+                    school.value = "请输入正确的学校名称！"
                 }
             }
         }
