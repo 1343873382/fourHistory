@@ -31,10 +31,11 @@ export default class Guide extends Component {
         let openid = localStorage.getItem("openid")
         let area = "figure_area"
         let { data } = await showArea(openid, area)
-        let figure_area = data.process.figure_area.split(",")
-        let event_area = data.process.event_area.split(",")
-        let conference_area = data.process.conference_area.split(",")
+        let figure_area = data.process.figure_area.split(",").filter((item)=>item!=="")
+        let event_area = data.process.event_area.split(",").filter((item)=>item!=="")
+        let conference_area = data.process.conference_area.split(",").filter((item)=>item!=="")
         this.state.area.push(...figure_area, ...event_area, ...conference_area)
+        console.log(figure_area,event_area,conference_area)
         this.setState({
             array: data.guides,
             isRender: true,
