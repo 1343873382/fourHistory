@@ -45,14 +45,7 @@ export default class Information extends Component {
         let openid = localStorage.getItem("openid")
         let INFO=localStorage.getItem("info")
         if(INFO==="success"){
-            let res = await updateInformation(name.value, school.value, tel.value, openid)
-            let info = res.info
-            localStorage.setItem("info", info)
-            if (res.code === 10000) {
-                this.props.history.push("/")
-            }
-
-            if (tel.value.length !== 11) {
+            if (tel.value.length !== 11||!(/[0-9]/g).test(tel.value)) {
                 tel.style.color = "#C4672E"
                 tel.value = "请输入正确的电话号码！"
             }
@@ -64,20 +57,26 @@ export default class Information extends Component {
                 name.style.color = "#C4672E"
                 name.value = "请输入姓名！"
             }
-            if (tel.value.length === 11 && name.value.length !== 0 && school.value.length === 0) {
-                this.props.history.push("/")
+            if(
+                tel.value.length === 11&&
+                (/[0-9]/g).test(tel.value)&&
+                school.value.length !== 0&&
+                name.value.length !== 0&&
+                name.value !== "请输入姓名！"&&
+                school.value !== "请输入学校！"&&
+                tel.value !== "请输入正确的电话号码！"
+            ){
+                let res = await updateInformation(name.value, school.value, tel.value, openid)
+                let info = res.info
+                localStorage.setItem("info", info)
+                if (res.code === 10000) {
+                    this.props.history.push("/")
+                }
             }
         }else{
-            let res = await setInformation(name.value, school.value, tel.value, openid)
-            let info = res.info
-            localStorage.setItem("info", info)
-            if (res.code === 10000) {
-                this.props.history.push("/")
-            }
-
-            if (tel.value.length !== 11) {
+            if (tel.value.length !== 11||!(/[0-9]/g).test(tel.value)) {
                 tel.style.color = "#C4672E"
-                tel.value = "请输入正确的电话号码！"
+                tel.placeholder = "请输入正确的电话号码！"
             }
             if (school.value.length === 0) {
                 school.style.color = "#C4672E"
@@ -87,8 +86,21 @@ export default class Information extends Component {
                 name.style.color = "#C4672E"
                 name.value = "请输入姓名！"
             }
-            if (tel.value.length === 11 && name.value.length !== 0 && school.value.length === 0) {
-                this.props.history.push("/")
+            if(
+                tel.value.length === 11&&
+                (/[0-9]/g).test(tel.value)&&
+                school.value.length !== 0&&
+                name.value.length !== 0&&
+                name.value !== "请输入姓名！"&&
+                school.value !== "请输入学校！"&&
+                tel.value !== "请输入正确的电话号码！"
+            ){
+                let res = await updateInformation(name.value, school.value, tel.value, openid)
+                let info = res.info
+                localStorage.setItem("info", info)
+                if (res.code === 10000) {
+                    this.props.history.push("/")
+                }
             }
         }
     }
