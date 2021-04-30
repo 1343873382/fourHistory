@@ -114,8 +114,12 @@ export default class Information extends Component {
             this.setState({
                 data:data.colleges
             })
-        
+          if(this.state.data===null){
+            select.style.display = "none"
+          }else{
             select.style.display = "block"
+          }
+           
         }, 300)
 
 

@@ -26,17 +26,17 @@
     }
     .res-content {
         position: relative;
-        &::after {
-            content: "";
-            position: absolute;
-            top: 40.5vh;
-            left: 5.5vw;
-            height: 50px;
-            width: 60vw;
-            background-color: #fbf2d2;
-            filter: blur(6px);
-            z-index: 2;
-        }
+        // &::after {
+        //     content: "";
+        //     position: absolute;
+        //     top: 40.5vh;
+        //     left: 5.5vw;
+        //     height: 50px;
+        //     width: 60vw;
+        //     background-color: #fbf2d2;
+        //     filter: blur(6px);
+        //     z-index: 2;
+        // }
         margin-left: 60px;
         padding-top: 60px;
         margin-top: 4vh;
