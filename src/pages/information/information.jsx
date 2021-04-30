@@ -33,15 +33,11 @@ export default class Information extends Component {
 
     }
     schoolclear = () => {
-
         let school = document.querySelector(".school-right").querySelector("input");
         if (school.value === "请输入学校！") {
             school.style.color = "#7B4733"
             school.value = ""
         }
-
-
-
     }
     nameclear = () => {
         let name = document.querySelector(".name-right").querySelector("input");
@@ -138,6 +134,7 @@ export default class Information extends Component {
 
     }
     chooseSchool = (e) => {
+        console.log(2);
         let select = document.querySelector(".school-select");
         let school = document.querySelector(".school-right").querySelector("input")
         console.log(e.target.innerText);
@@ -167,7 +164,12 @@ export default class Information extends Component {
                         <div className="content-school">
                             <div className="school-left">学校：</div>
                             <div className="school-right">
-                                <input type="text" placeholder="请选择你的学校" onChange={this.turnSelect} onClick={this.schoolclear}/>
+                                <input type="text" placeholder="请选择你的学校" onChange={this.turnSelect} onFocus={this.turnSelect} onBlur={()=>{
+                                    setTimeout(()=>{
+                                        let select = document.querySelector(".school-select");
+                                        select.style.display = "none"
+                                    },100)
+                                }} onClick={this.schoolclear}/>
                                 <div className="school-select">
                                     <ul>
                                         {listItems}
