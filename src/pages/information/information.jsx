@@ -15,6 +15,7 @@ export default class Information extends Component {
         console.info("原始窗口的高度"+originalHeight);  
         window.onresize = function(){
                 document.querySelector('.information').style.height = originalHeight+'px';
+                document.querySelector('.mask').style.height = originalHeight+'px';
         }
     }
     telclear = () => {
