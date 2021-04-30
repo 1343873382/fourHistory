@@ -12,8 +12,8 @@ export default class Guide extends Component {
             area: [],
             figure_area: [],
             event_area: [],
-            conference_area: []
-
+            conference_area: [],
+            current_area:'人物'
         }
     }
     isShow = () => {
@@ -76,7 +76,8 @@ export default class Guide extends Component {
         this.setState({
             isRender: true,
             index: 1,
-            array: guides
+            array: guides,
+            current_area: '人物'
         })
         let res = await showArea(openid, area)
         console.log(res);
@@ -88,17 +89,16 @@ export default class Guide extends Component {
         let openid = localStorage.getItem("openid")
         let area = "event_area"
         let { data: { guides } } = await showArea(openid, area)
-
         this.setState({
             isRender: true,
             index: 1,
-            array: guides
+            array: guides,
+            current_area: '事件'
         })
         console.log(this.state.array);
 
     }
     turnMeeting = async () => {
-
         let index = 2;
         this.changeStyle(index)
         let openid = localStorage.getItem("openid")
@@ -108,7 +108,8 @@ export default class Guide extends Component {
         this.setState({
             isRender: true,
             index: 1,
-            array: guides
+            array: guides,
+            current_area: '会议'
         })
         console.log(this.state.array);
     }
@@ -161,11 +162,11 @@ export default class Guide extends Component {
                         <div className="attention">路线提示</div>
                         <div className={this.state.isRender !== false&&this.state.area.indexOf(this.state.array[this.state.index - 1].id.toString())!==-1
                         ?"attention-content":"unattention-content"}>
-                            <div>{this.state.isRender === false ? before1 : <div style={{ "white-space": "pre-line" }}>{this.state.array[this.state.index - 1].road}</div>}</div>
+                            <div>{this.state.isRender === false ? before1 : <div style={{ "whiteSpace": "pre-line" }}>{this.state.array[this.state.index - 1].road}</div>}</div>
                         </div>
                         {this.state.isRender !== false && this.state.area.indexOf(this.state.array[this.state.index - 1].id.toString()) !== -1 ? (
                             <div>
-                                <div className="story">人物故事</div>
+                                <div className="story">{this.state.current_area}故事</div>
                                 <div className="story-content">
                                     <div> {this.state.isRender === false ? before2 : this.state.array[this.state.index - 1].story}</div>
                                 </div>
