@@ -124,6 +124,10 @@ export default class Information extends Component {
     turnSelect = async () => {
         let select = document.querySelector(".school-select");
         let school = document.querySelector(".school-right").querySelector("input")
+        if(school.value === "请输入正确的学校名称！"){
+            school.style.color = "#7B4733"
+            school.value = "";
+        }
         clearTimeout(this.state.timeID)
         this.state.timeID = setTimeout(async () => {
             let { data } = await setSchool(school.value)
