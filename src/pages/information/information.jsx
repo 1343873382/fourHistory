@@ -17,7 +17,7 @@ export default class Information extends Component {
             var resizeHeight=document.documentElement.clientHeight || document.body.clientHeight;  
             console.info("软键盘弹起后窗口的高度"+resizeHeight);  
             if(resizeHeight<originalHeight){  
-                  document.querySelector('body').style.height = originalHeight+'px';
+                  document.querySelector('#root').style.height = originalHeight+'px';
              }
         }
     }
