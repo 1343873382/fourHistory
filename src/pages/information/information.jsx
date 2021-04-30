@@ -11,8 +11,9 @@ export default class Information extends Component {
         }
     }
     componentDidMount(){
-        let originalHeight=document.documentElement.clientHeight || document.body.clientHeight;  
-        console.info("原始窗口的高度"+originalHeight);  
+        let originalHeight=document.documentElement.clientHeight || document.body.clientHeight;
+        document.querySelector('.information').style.height = originalHeight+'px';
+        document.querySelector('.mask').style.height = originalHeight+'px';  
         window.onresize = function(){
                 document.querySelector('.information').style.height = originalHeight+'px';
                 document.querySelector('.mask').style.height = originalHeight+'px';
