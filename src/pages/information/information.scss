@@ -8,24 +8,24 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: fixed;
-    .mask{
+    .mask {
         background: #000;
         opacity: 0.3;
         width: 100vw;
         height: 1334px;
         position: fixed;
         z-index: 5;
-        .logo{
+        .logo {
             background: url(../../assets/images/logo.png)no-repeat;
-            background-size:241px 73px;
+            background-size: 241px 73px;
             width: 241px;
             height: 73px;
             position: absolute;
             top: 30px;
             left: 2vw;
         }
-        .info{
-            background:url(../../assets/images/self-info.png)no-repeat;
+        .info {
+            background: url(../../assets/images/self-info.png)no-repeat;
             background-size: 73px 73px;
             position: absolute;
             width: 73px;
@@ -58,7 +58,7 @@
             margin-top: 120px;
             width: 470px;
             input {
-                height: 60px;
+                height: 40px;
                 border: medium none;
                 list-style-type: none;
                 background: none;
@@ -68,15 +68,16 @@
                 font-family: HYXiaoBoZheZhiTiJ;
                 font-weight: 400;
                 color: #7B4733;
-                line-height: 40px;
+                line-height: 60px;
             }
             input:focus {
                 outline: none;
             }
             input::placeholder {
+                vertical-align: middle;
                 width: 218px;
                 height: 40px;
-                font-size: 40px;
+                font-size: 35px;
                 font-family: HYXiaoBoZheZhiTiJ;
                 font-weight: 400;
                 color: #C4A686;
@@ -97,6 +98,7 @@
                     line-height: 40px;
                 }
                 .name-right {
+                    // padding-top: 0.5vh;
                     flex: 3
                 }
             }
@@ -116,6 +118,7 @@
                     line-height: 40px;
                 }
                 .school-right {
+                    // padding-top: 0.5vh;
                     flex: 3;
                     .school-select::-webkit-scrollbar {
                         width: 0 !important
@@ -156,6 +159,7 @@
                     line-height: 40px;
                 }
                 .tel-right {
+                    // padding-top: 0.3vh;
                     flex: 3
                 }
             }
