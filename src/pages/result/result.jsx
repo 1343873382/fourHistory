@@ -27,7 +27,8 @@ export default class Result extends Component {
 
         return (
             <div className="result">
-                <div className="res-title">{title} </div>
+{title.length>7?<div className="res-bigtitle">{title} </div>:<div className="res-title">{title} </div>}
+                
                 <div className="res-content">
                     <div className="mask"></div>
                     <div className="res">
