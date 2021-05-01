@@ -63,12 +63,11 @@
                 list-style-type: none;
                 background: none;
                 width: 100%;
-                height: 60px;
                 font-size: 35px;
                 font-family: HYXiaoBoZheZhiTiJ;
                 font-weight: 400;
                 color: #7B4733;
-                line-height: 60px;
+                line-height: 40px;
             }
             input:focus {
                 outline: none;
@@ -84,9 +83,11 @@
                 line-height: 40px;
             }
             .content-name {
+                height: 40px;
                 width: 100%;
                 display: flex;
                 .name-left {
+                    height: 40px;
                     flex: 1;
                     display: flex;
                     align-items: center;
@@ -98,15 +99,20 @@
                     line-height: 40px;
                 }
                 .name-right {
+                    display: flex;
+                    align-items: center;
+                    height: 40px;
                     // padding-top: 0.5vh;
                     flex: 3
                 }
             }
             .content-school {
+                height: 40px;
                 margin-top: 50px;
                 width: 100%;
                 display: flex;
                 .school-left {
+                    height: 40px;
                     flex: 1;
                     display: flex;
                     align-items: center;
@@ -118,6 +124,9 @@
                     line-height: 40px;
                 }
                 .school-right {
+                    display: flex;
+                    align-items: center;
+                    height: 40px;
                     // padding-top: 0.5vh;
                     flex: 3;
                     .school-select::-webkit-scrollbar {
@@ -144,10 +153,12 @@
                 }
             }
             .content-tel {
+                height: 40px;
                 margin-top: 50px;
                 width: 100%;
                 display: flex;
                 .tel-left {
+                    height: 40px;
                     flex: 1;
                     display: flex;
                     align-items: center;
@@ -159,6 +170,9 @@
                     line-height: 40px;
                 }
                 .tel-right {
+                    display: flex;
+                    align-items: center;
+                    height: 40px;
                     // padding-top: 0.3vh;
                     flex: 3
                 }
