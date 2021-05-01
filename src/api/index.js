@@ -1,6 +1,6 @@
 import ajax from "./ajax"
-// const Base = "https://be-prod.redrock.team/four-history";
-const Base = ""
+const Base = "https://be-prod.redrock.team/four-history";
+// const Base = ""
 
 export let setSchool = (college) => ajax(Base + "/college", { college }, "GET")
 export let setInformation = (name, college, telephone, openid) => ajax(Base + "/information/create", { name, college, telephone, openid }, "POST")
