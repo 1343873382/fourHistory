@@ -34,7 +34,7 @@ export default class Information extends Component {
     }
     schoolclear = () => {
         let school = document.querySelector(".school-right").querySelector("input");
-        if (school.value === "请输入学校！") {
+        if (school.value === "请输入学院！") {
             school.style.color = "#7B4733"
             school.value = ""
         }
@@ -60,7 +60,7 @@ export default class Information extends Component {
             }
             if (school.value.length === 0) {
                 school.style.color = "#C4672E"
-                school.value = "请输入学校！"
+                school.value = "请输入学院！"
             }
             if (name.value.length === 0) {
                 name.style.color = "#C4672E"
@@ -72,9 +72,9 @@ export default class Information extends Component {
                 school.value.length !== 0&&
                 name.value.length !== 0&&
                 name.value !== "请输入姓名！"&&
-                school.value !== "请输入学校！"&&
+                school.value !== "请输入学院！"&&
                 tel.value !== "请输入正确的电话号码！"&&
-                school.value !== "请输入正确的学校名称！"
+                school.value !== "请输入正确的学院名称！"
             ){
                 let res = await updateInformation(name.value, school.value, tel.value, openid)
                 let info = res.info
@@ -83,7 +83,7 @@ export default class Information extends Component {
                     this.props.history.push("/")
                 }else if(res.code===20000){
                     school.style.color = "#C4672E"
-                    school.value = "请输入正确的学校名称！"
+                    school.value = "请输入正确的学院名称！"
                 }
             }
         }else{
@@ -93,7 +93,7 @@ export default class Information extends Component {
             }
             if (school.value.length === 0) {
                 school.style.color = "#C4672E"
-                school.value = "请输入学校！"
+                school.value = "请输入学院！"
             }
             if (name.value.length === 0) {
                 name.style.color = "#C4672E"
@@ -105,9 +105,9 @@ export default class Information extends Component {
                 school.value.length !== 0&&
                 name.value.length !== 0&&
                 name.value !== "请输入姓名！"&&
-                school.value !== "请输入学校！"&&
+                school.value !== "请输入学院！"&&
                 tel.value !== "请输入正确的电话号码！"&&
-                school.value !== "请输入正确的学校名称！"
+                school.value !== "请输入正确的学院名称！"
             ){
                 let res = await setInformation(name.value, school.value, tel.value, openid)
                 let info = res.info
@@ -116,7 +116,7 @@ export default class Information extends Component {
                     this.props.history.push("/")
                 }else if(res.code===20000){
                     school.style.color = "#C4672E"
-                    school.value = "请输入正确的学校名称！"
+                    school.value = "请输入正确的学院名称！"
                 }
             }
         }
@@ -124,7 +124,7 @@ export default class Information extends Component {
     turnSelect = async () => {
         let select = document.querySelector(".school-select");
         let school = document.querySelector(".school-right").querySelector("input")
-        if(school.value === "请输入正确的学校名称！"){
+        if(school.value === "请输入正确的学院名称！"){
             school.style.color = "#7B4733"
             school.value = "";
         }
