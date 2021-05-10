@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import "./information.scss"
-import { setSchool } from "../../api/index"
+// import { setSchool } from "../../api/index"
 import { setInformation,updateInformation } from "../../api/index"
 export default class Information extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: [],
+            data: ['通信与信息工程学院','计算机科学与技术学院','自动化学院','先进制造工程学院','光电工程学院','软件工程学院','生物信息学院','理学院','经济管理学院','传媒艺术学院','外国语学院','国际学院','网络空间安全与信息法学院','马克思主义学院','体育学院','创新创业教育学院','国防信息工程技术研究院','电子信息与网络工程研究院'],
             timeID: -1,
             height:1334
         }
@@ -128,20 +128,28 @@ export default class Information extends Component {
             school.style.color = "#7B4733"
             school.value = "";
         }
-        clearTimeout(this.state.timeID)
-        this.state.timeID = setTimeout(async () => {
-            let { data } = await setSchool(school.value)
-           console.log(data);
-            this.setState({
-                data:data.colleges
-            })
-          if(this.state.data===null){
+        console.log(school.value.length);
+        if(school.value.length>2){
             select.style.display = "none"
-          }else{
+        }else{
             select.style.display = "block"
-          }
+        }
+         
+        
+        // clearTimeout(this.state.timeID)
+        // this.state.timeID = setTimeout(async () => {
+        //     let { data } = await setSchool(school.value)
+        //    console.log(data);
+        //     this.setState({
+        //         data:data.colleges
+        //     })
+        //   if(this.state.data===null){
+        //     select.style.display = "none"
+        //   }else{
+        //     select.style.display = "block"
+        //   }
            
-        }, 300)
+        // }, 300)
 
 
     }
@@ -152,9 +160,9 @@ export default class Information extends Component {
         console.log(e.target.innerText);
         school.value = e.target.innerText
         select.style.display = "none"
-        this.setState({
-            data: []
-        })
+        // this.setState({
+        //     data: []
+        // })
 
     }
     render() {
@@ -174,9 +182,9 @@ export default class Information extends Component {
                             </div>
                         </div>
                         <div className="content-school">
-                            <div className="school-left">学校：</div>
+                            <div className="school-left">学院：</div>
                             <div className="school-right">
-                                <input type="text" placeholder="请选择你的学校" onChange={this.turnSelect} onFocus={this.turnSelect} onBlur={()=>{
+                                <input type="text" placeholder="请选择你的学校"  onClick={this.turnSelect} onFocus={this.turnSelect} onBlur={()=>{
                                     setTimeout(()=>{
                                         let select = document.querySelector(".school-select");
                                         select.style.display = "none"
