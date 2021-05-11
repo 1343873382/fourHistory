@@ -5,17 +5,23 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     .hall-rule {
+        background-image: url(../../assets/images/rule-book.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
         position: absolute;
         right: 30px;
         top: 40px;
-        width: 70px;
-        height: 70px
+        width: 100px;
+        height: 100px
     }
     .hall-guide {
+        background-image: url(../../assets/images/guide-book_02.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
         position: absolute;
         right: 32px;
         bottom: 50px;
-        width: 110px;
+        width: 140px;
         height: 180px
     }
     .hall-choose {
